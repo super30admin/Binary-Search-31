@@ -1,0 +1,49 @@
+// Time Complexity :  O(n) - > length of citations array
+// Space Complexity : O(1)
+// Did this code successfully run on Leetcode :yes
+// Any problem you faced while coding this :no
+
+
+// Your code here along with comments explaining your approach: just run the for loop and calculate the difference between n and i where the diff is become lesser than the value of citation then i make sure that is the H-index.
+
+class Solution {
+    public int hIndex(int[] citations) {
+        int n = citations.length;
+        for (int i = 0; i < n; i++) {
+            int nDiff = n - i;
+            if( nDiff <= citations[i]){
+                return nDiff;
+            }
+        }
+        return 0;
+    }
+}
+
+
+// Time Complexity :  O(logn) - > length of citations array
+// Space Complexity : O(1)
+// Did this code successfully run on Leetcode :yes
+// Any problem you faced while coding this :no
+
+
+// Your code here along with comments explaining your approach: implemented binary search on citations array where my citations[mid] is become n-mid then i return n-mid and if we have only one ppaper and citations in that case return n-left;
+// for example [0] it will be n-left then 1-1=0 and in [100] case it would be n-left 1-0=1
+
+class Solution {
+    public int hIndex(int[] citations) {
+        int n = citations.length;
+        int left = 0;
+        int right = n-1;
+        while (left <= right) {
+                int mid = left + (right - left) / 2;
+               if (citations[mid] == n-mid) {
+                    return n-mid;
+                } else if (citations[mid] > n-mid) {
+                    right = mid-1;
+                } else {
+                    left = mid + 1;
+                }
+            }
+        return n-left;
+    }
+}

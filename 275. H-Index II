@@ -1,0 +1,33 @@
+class Solution:
+    
+    # binary search function to find the h-index
+    def bsearch(self, citations):
+        n = len(citations)
+        # initialize two variables low and high to the left and right ends of the array
+        low, high = 0, n - 1;
+        # answer variable to store the solution
+        ans = 0;
+        while(low <= high):
+            # find the mid value
+            mid = low + (high - low)//2;
+            # check whether the citations of mid paper greater than number of papers bw mid and n
+            # if it is, n - mid is one of the possible answers and go to the left side
+            # else go to the right side
+            if(citations[mid] >= n- mid):
+                ans = n - mid;
+                high = mid - 1
+            else:
+                low = mid + 1
+        return ans;
+                
+    
+    def hIndex(self, citations: List[int]) -> int:
+        n = len(citations);
+        
+        return self.bsearch(citations);
+    '''
+    time complexity = O(logn)
+    space complexity = O(1)
+    
+    '''
+        

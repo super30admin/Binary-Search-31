@@ -1,0 +1,18 @@
+# Time Complexity: O(n)
+# Space Complexity: O(1)
+#Did it work on Leetcode: yes
+
+class Solution(object):
+    def hIndex(self, citations):
+        """
+        :type citations: List[int]
+        :rtype: int
+        """
+        n=len(citations)
+        #h>n
+        #n-h>=h
+        for i in range(n):
+            diff=n-i
+            if(citations[i]>=diff):
+                return diff
+        return 0

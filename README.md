@@ -3,6 +3,8 @@
 ## Problem1
 Optimize Air Routes (https://leetcode.com/discuss/interview-question/1025705/Amazon-or-OA-or-Prime-Air-time/824897) 
 
+The above link is expired, we can find the question here (https://leetcode.com/discuss/interview-question/1025705/Amazon-or-OA-or-Prime-Air-time)
+
 There are 3 things to be known before attempting this problem:
 maxTravelDist, it is an integer which represents the maximum operating travel distance of the given aircraft;
 forwardRouteList, it is a list of pairs of integers where the first integer represents the unique identifier of a forward shipping route and the second integer represents the amount of travel distance required by this shipping route;

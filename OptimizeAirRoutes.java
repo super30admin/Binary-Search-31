@@ -3,6 +3,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
+//TC: O(mlogm + nlogn), SC: O(1)
 public class OptimizeAirRoutes {
 
     public List<int[]> optimalRoutes(int[][] forward, int[][] back, int target) {
